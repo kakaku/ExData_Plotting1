@@ -9,6 +9,7 @@ if(length(args)>0 & args[1] == "debug"){
   dat <- read.table(unz(temp, "household_power_consumption.txt"), nrows=2880, skip=66637, sep=";")
   colnames(dat) <- unlist(header)
   unlink(temp)
+  write.csv(dat, file="household.csv", row.names=FALSE)
 }
 
 png("plot4.png", bg="transparent")
